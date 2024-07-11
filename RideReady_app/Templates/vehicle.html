@@ -1,0 +1,107 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Your Brand</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+      background-repeat: no-repeat;
+     background-size: cover;
+    
+      background-image: url('/static/backimg.jpg');
+    }
+    
+</style>
+</head>
+<body>
+    <!-- Product Start -->
+    <br>
+    <br>
+    
+    <div class="container-xxl py-5">
+      <div class="container">
+        <h1 style="margin-left: 400px;">Select Your Brand</h1>
+        <br>
+        <br>
+          
+          <div class="tab-content">
+              <div id="tab-2" class="tab-pane fade show p-0 active">
+                  <div class="row g-4">
+                      <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                          <div class="product-item">
+                              <div class="position-relative bg-light overflow-hidden"><br>
+                                <img class="img-fluid w-100" src="{% static 'tvs-logo-33710.png' %}" alt="" style="height: 50px;">
+                              </div>
+                              <div class="text-center p-4">
+                                  <a class="d-block h5 mt-4" href="{% url 'tvs' %}">TVS</a>
+                              </div>
+                              <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                          <a class="btn btn-primary rounded-pill py-2 px-5 mt-1.5" href="{% url 'tvs' %}">Explore</a>
+                      </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                          <div class="product-item">
+                              <div class="position-relative bg-light overflow-hidden">
+                                  <img class="img-fluid w-100" src="{% static 'yamaha logo.png' %}" alt="" style="height: 100px;">
+                                  
+                              </div>
+                              <div class="text-center p-4">
+                                  <a class="d-block h5 mb-2" href="{% url 'yamaha' %}">YAMAHA</a>
+                                
+                                  
+                              </div>
+                              <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                          <a class="btn btn-primary rounded-pill py-2 px-5" href="{% url 'yamaha' %}">Explore</a>
+                      </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                          <div class="product-item">
+                              <div class="position-relative bg-light overflow-hidden">
+                                  <img class="img-fluid w-100" src="{% static 'bajaj logo.png' %}" alt=""style="height: 100px;">
+                                  
+                              </div>
+                              <div class="text-center p-4">
+                                  <a class="d-block h5 mb-2"href="{% url 'bajaj' %}">BAJAJ</a>
+                                  
+                                  
+                              </div>
+                              <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                          <a class="btn btn-primary rounded-pill py-2 px-5" href="{% url 'bajaj' %}">Explore</a>
+                      </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                          <div class="product-item">
+                              <div class="position-relative bg-light overflow-hidden">
+                                  <img class="img-fluid w-100 mt-4" src="{% static 'hero logo.png' %}" alt="" style="height: 50px;">
+                                  
+                              </div>
+                              <div class="text-center p-4">
+                                  <a class="d-block h5 mt-4" href="{% url 'bajaj' %}">HERO</a>
+                                  
+                                  
+                              </div>
+                              <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                          <a class="btn btn-primary rounded-pill py-2 px-5" href="{% url 'bajaj' %}">Explore</a>
+                      </div>
+                          </div>
+                      </div>
+                      <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-5" href="">Browse More Brands</a>
+                    </div>
+                      
+          </div>
+      </div>
+  </div>
+  <!-- Product End -->
+
+</body>
+</html>

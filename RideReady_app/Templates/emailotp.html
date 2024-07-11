@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+     background-repeat: no-repeat;
+     background-size: cover;
+    
+      background-image: url('/static/backimg.jpg');
+    }
+    .container {
+      width: 300px;
+      margin: 50px auto;
+      margin-top: 200px;
+    }
+    input[type="text"], input[type="email"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: yellow;
+      color: black;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 style="margin-left: 25px;">EMAIL VERIFICATION</h2>
+  <form method="post" action="data1">
+    {% csrf_token %}
+    <input type="text"  name="firstName" placeholder="First Name" required><br>
+    <input type="email" name="email" placeholder="Email Address" required><br>
+    <input type="submit">
+  </form>
+</div>
+</body>
+</html>

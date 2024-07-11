@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Application Form</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Background Design */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://source.unsplash.com/random/1600x900') center/cover no-repeat fixed;
+    z-index: -1;
+    opacity: 0.7;
+}
+</style>
+</head>
+<body>
+{% block content %}
+<div class="background"></div>
+<div class="container">
+    <h2>Loan Application Form</h2>
+    <form action="customer" method="post">
+        {% csrf_token%}
+        <h3>Customer Details</h3>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required>
+        <label for="fathername">Father's Name</label>
+        <input type="text" id="fathername" name="fathername" required>
+        <label for="mobile">Mobile Number</label>
+        <input type="text" id="mobile" name="mobile" required>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+
+        <h3>KYC Details</h3>
+        <label for="id_proof">ID Proof</label>
+        <select id="id_proof" name="id_proof" required>
+            <option value="">Select ID Proof</option>
+            <option value="passport">Passport</option>
+            <option value="driver_license">Driver's License</option>
+            <option value="aadhar_card">Aadhar Card</option>
+        </select>
+        <label for="id_number">ID Number</label>
+        <input type="text" id="id_number" name="id_number" required>
+
+        <h3>Account Details</h3>
+        <label for="account_number">Account Number</label>
+        <input type="text" id="account_number" name="account_number" required>
+        <label for="bank_name">Bank Name</label>
+        <input type="text" id="bank_name" name="bank_name" required>
+        <label for="branch">Branch</label>
+        <input type="text" id="branch" name="branch" required>
+
+        <h3>Loan Details</h3>
+        <label for="ex_showroom_price">Ex-showroom Price</label>
+        <input type="number" id="ex_showroom_price" name="ex_showroom_price" required>
+        <label for="loan_amount">Loan Amount</label>
+        <input type="number" id="loan_amount" name="loan_amount" required>
+        <label for="initial_amount">Initial Amount</label>
+        <input type="number" id="initial_amount" name="initial_amount" required>
+
+        <input type="submit">
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

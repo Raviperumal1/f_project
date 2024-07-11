@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .invoice {
+            background-image: url('/static/back img2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .header {
+            display: inline-flex;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            max-width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .customer-details, .loan-details, .success-message {
+            margin-bottom: 10px;
+        }
+
+        .customer-details h2, .loan-details h2, .success-message h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .customer-details p, .loan-details p, .success-message p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    {% block content %}
+    <form method="post" action="">
+    {% csrf_token %}
+    <div class="invoice">
+        <div class="header">
+            <img src="{% static 'rideready logo.png' %}" alt="Finance Logo"><h1>RideReady Finance</h1>
+        </div>
+        <div class="customer-details">
+            <h2>Customer Details</h2>
+            
+                <p><strong style="padding-right: 70px;">Name</strong> <strong>:</strong> {{fullname }}</p>
+                <p><strong style="padding-right: 10px;">Father's Name</strong><strong>:</strong> {{ fathername }}</p>
+                <p><strong style="padding-right: 70px;">Mobile</strong><strong>:</strong> {{ mobile }}</p>
+                <p><strong style="padding-right: 57px;">Address</strong><strong>:</strong> {{ address }}</p>
+           
+            
+            
+            
+        </div>
+        <div class="loan-details">
+            <h2>Loan Details</h2>
+            
+                <p><strong style="padding-right: 16px;">Ex-Showroom Price</strong><strong>:</strong> {{ ex_showroom_price }}</p>
+                <p><strong style="padding-right: 50px;">Initial Payment</strong> <strong>:</strong> {{ initial_amount }}</p>
+                <p><strong style="padding-right: 60px;">Loan Amount</strong> <strong>:</strong> {{ loan_amount }}</p>
+            
+        </div>
+        <div class="success-message">
+            <center>
+            <h2>Loan Application Submitted Successfully</h2>
+            <p>Thank you for choosing Ride Ready Finance for your loan application. We will review your application and get back to you shortly.</p>
+            </center>
+        </div>
+    </div>
+</form>
+{% endblock %}
+</body>
+</html>
